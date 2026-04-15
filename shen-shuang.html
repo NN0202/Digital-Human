@@ -26,7 +26,6 @@
         font-family: "Noto Serif SC", serif;
         background-color: var(--cyan-deep);
         color: var(--cyan-light);
-        overflow: hidden;
         height: 100vh;
         width: 100vw;
         margin: 0;
@@ -183,7 +182,8 @@
     <!-- 聊天主界面 (初始隐藏) -->
     <div
       id="main-ui"
-      class="hidden flex flex-col h-full animate__animated animate__fadeIn"
+      style="display: none"
+      class="flex flex-col h-full animate__animated animate__fadeIn"
     >
       <header
         class="p-6 flex justify-between items-center border-b border-white/10"
@@ -249,8 +249,8 @@
       startBtn.addEventListener("click", () => {
         welcomeScreen.style.opacity = "0";
         setTimeout(() => {
-          welcomeScreen.classList.add("hidden");
-          mainUI.classList.remove("hidden");
+          welcomeScreen.style.display = "none";
+          mainUI.style.display = "flex";
         }, 1000);
       });
 
